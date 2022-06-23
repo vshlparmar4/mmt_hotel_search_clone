@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsuvNOSU4YNYGA7uh1lk22Hu7lTT3QF3A&libraries=places">
+    </script>
+    <script defer src="./index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-container" id="main-container">
+        <img src="./mmt2.png" alt="MakeMyTrip Logo" class="main-logo center" height="5%">
+        <div class="test" id="rooms_and_adults">
+          <form action="#" onsubmit="pop_up_submit(event)" id="pop-up-form">
+            <div id="add_more_room">
+              <div id="room1" class="add_room">
+                <label for="room1" class="room-label">ROOM 1</label>
+                <div class="flex-1">
+                  <div class="adult">
+                    <span>ADULTS (12y +)</span>
+                    <input
+                      type="number"
+                      id="adult_1"
+                      placeholder="No. of Adults"
+                      min="1"
+                      value="1"
+                      class="count-input"
+                      name="room_1_adults"
+                    />
+                    <button
+                      type="button"
+                      onclick="increase_count('adult_1')"
+                      value="fefe"
+                    >
+                      +
+                    </button>
+                    <button type="button" onclick="decrease_count('adult_1')">
+                      -
+                    </button>
+                  </div>
+                  <div class="child">
+                    <span>CHILDREN (Age 12y and below)</span>
+                    <input
+                      type="number"
+                      id="child_1"
+                      placeholder="No. of Children"
+                      min="0"
+                      value="0"
+                      class="count-input"
+                      name="room_1_children"
+                    />
+                    <button
+                      type="button"
+                      onclick="increase_count('child_1')"
+                      value="fefe"
+                    >
+                      +
+                    </button>
+                    <button type="button" onclick="decrease_count('child_1')">
+                      -
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pop-up-bottom-row">
+            <div class="add-delete">
+              <div>
+                <button type="button" onclick="add_room()" class="room-button">ADD ROOM</button>
+              </div>
+              <div id="delete">
+                <button type="button" onclick="remove()" class="room-button" >DELETE ROOM</button>
+              </div>
+            </div>
+
+            <div>
+              <button type="submit" class="room-apply-button">APPLY</button>
+            </div>
+          </div>
+          </form>
+        </div>
+        <form action="#" class="form" id="search_form" onsubmit = "submit_search(event)">
+          <div class="search-container">
+            <div class="hotel-badge">
+              <img class="hotel-badge-image" src="./hotel.png">
+              <span class="hotels-text">Hotels</span>
+            </div>
+              
+              <div class="content grid">
+                
+                <div class="box hotel-box">
+                  <span class="box-titles">CITY/HOTEL/AREA/BUILDING </span> <br>
+                  <input type="text" placeholder="Address" id="location" class="location" name="location">
+                </div>
+                
+                <div class="box">
+                  <span class="box-titles">CHECK-IN </span> <br>
+                  <input type="date" placeholder="29/20/2021" name="in_date">
+                </div>
+                <div class="box">
+                  <span class="box-titles">CHECK-OUT </span> <br>
+                  <input type="date" placeholder="29/20/2021" name="out_date">
+                </div>
+                <div class="box adults-box" id="adults-box" onclick="toggle()">
+                  <span class="box-titles" id="adults">ROOMS & GUESTS</span> <br>
+                  <span class="box-titles" style="margin-top:-15px" id="adult-room"><span class="highlight-text" id="room-count">1</span><span id="rooms-text">Room </span> <span class="highlight-text" id="guest-count">1</span> <span id = "guests-text">Guest</span> </span> <br>
+                </div>
+              </div>
+              <div class="filter-container">
+                <div class="filter-box">
+                  <span class="filters-text">Popular Filters:</span>
+                </div>
+
+                <div class="filter-box dark-box">
+                  <input type="checkbox" id="choice2" class="largerCheckbox" name="free_cancellation">
+                  <label for="vehicle1"> Free Cancellation</label>
+                </div>
+                
+                <div class="filter-box dark-box">
+                  <input type="checkbox" id="choice2" class="largerCheckbox" name="breakfast_available">
+                  <label for="vehicle1"> Breakfast Available</label>
+                </div>
+                <div class="filter-box dark-box">
+                  <input type="checkbox" id="choice3" class="largerCheckbox" name="homestays">
+                  <label for="vehicle1"> Homestays</label>
+                </div>
+              </div>
+                <button type="submit" class="search-button" id="submit">
+                  <span class="search-text">SEARCH</span>
+                </button>
+            </div>
+          </form>
+    </div>
+</body>
+</html>
